@@ -1,5 +1,11 @@
 TAG=0.9
-REPO=fudanchii/base
+REPO=fudanchii
 
 all:
-	docker build -t ${REPO}:${TAG} -rm ./
+	docker build -t ${REPO}/base:${TAG} -rm ./
+
+python:
+	docker build -t ${REPO}/python:${TAG} -rm python_image
+
+rails:
+	docker build -t ${REPO}/rails:${TAG} -rm rails_image
