@@ -1,4 +1,4 @@
-FROM fudanchii/base:0.9
+FROM fudanchii/base:latest
 MAINTAINER Nurahmadie <nurahmadie@gmail.com>
 
 ADD sv/redis/run /etc/sv/redis/
