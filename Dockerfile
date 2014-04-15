@@ -1,4 +1,4 @@
-FROM stackbrew/ubuntu:12.04
+FROM stackbrew/ubuntu:13.10
 MAINTAINER Nurahmadie <nurahmadie@gmail.com>
 
 RUN mkdir /pv

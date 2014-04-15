@@ -4,19 +4,13 @@ set -e
 set -x
 
 mkdir -p /root
+mkdir -p /opt/go
 export HOME=/root
 
-pushd ./
-mkdir -p /tmp/gvm
-cd /tmp/gvm && bash < <(curl -s https://raw.github.com/moovweb/gvm/master/binscripts/gvm-installer)
-source $HOME/.gvm/scripts/gvm
-popd
+cd /usr/local
+curl https://go.googlecode.com/files/go1.2.1.linux-amd64.tar.gz -o go1.2.1.linux-amd64.tar.gz
+tar -xf go1.2.1.linux-amd64.tar.gz
 
-gvm install go1.1
-gvm install go1.2
-gvm install go1.2.1
-
-rm -rf $HOME/.gvm/archive/go
-rm -rf /tmp/gvm
+rm -rf go1.2.1.linux-amd64.tar.gz
 
 rm /bin/install.sh

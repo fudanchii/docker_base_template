@@ -5,7 +5,7 @@ set -x
 
 # Enable us to use apt-add-repository
 apt-get update
-apt-get install -yq --no-install-recommends --no-install-suggests python-software-properties
+apt-get install -yq --no-install-recommends --no-install-suggests python-software-properties software-properties-common
 
 # Setup ppa repositories
 apt-add-repository ppa:brightbox/ruby-ng
