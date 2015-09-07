@@ -3,14 +3,19 @@
 set -e
 set -x
 
-mkdir -p /root
-mkdir -p /opt/go
-export HOME=/root
+mkdir -p /var/cache/drone
 
-cd /usr/local
-curl https://go.googlecode.com/files/go1.2.1.linux-amd64.tar.gz -o go1.2.1.linux-amd64.tar.gz
-tar -xf go1.2.1.linux-amd64.tar.gz
+apt-get update 1> /dev/null 2> /dev/null
+apt-get -y install ruby2.1 ruby2.1-dev zip bzip2 libsqlite3-dev sqlite3 rpm dpkg 1> /dev/null 2> /dev/null
+gem2.1 install fpm
 
-rm -rf go1.2.1.linux-amd64.tar.gz
+go get golang.org/x/tools/cmd/vet
+go get golang.org/x/tools/cmd/cover
 
-rm /bin/install.sh
+# Cleanup apt caches
+apt-get autoremove
+apt-get autoclean
+apt-get clean
+
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+rm -f /bin/install.sh

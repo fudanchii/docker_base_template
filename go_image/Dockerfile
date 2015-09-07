@@ -1,10 +1,10 @@
-FROM fudanchii/base:latest
+FROM golang:latest
 MAINTAINER Nurahmadie <nurahmadie@gmail.com>
 
 ADD install.sh /bin/
 RUN /bin/install.sh
 
-ENV GOPATH /opt/go
-ENV PATH /opt/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin
+ENV GOPATH=/var/cache/drone
 
-ENTRYPOINT ["/usr/sbin/runsvdir-start"]
+ADD drone.key /.drone.key
+

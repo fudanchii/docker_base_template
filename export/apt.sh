@@ -29,9 +29,9 @@ apt-get install -yq \
     libsqlite3-dev \
     libpq-dev \
     libmysqlclient-dev \
-    ruby2.1 \
-    ruby2.1-dev \
-    libruby2.1 \
+    ruby2.2 \
+    ruby2.2-dev \
+    libruby2.2 \
     rubygems \
     ruby-switch \
     nodejs \
@@ -51,7 +51,7 @@ apt-get autoclean
 apt-get clean
 
 
-ruby-switch --set ruby2.1
+ruby-switch --set ruby2.2
 
 echo "gem: --no-ri --no-rdoc" > /etc/gemrc
 
